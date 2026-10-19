@@ -1,0 +1,78 @@
+{
+  "name": "genpark-agentic-commerce-dynamic-bundle-cart-cannibalization-guard-skill",
+  "title": "Dynamic Bundle Cart Cannibalization Guard Skill",
+  "version": "1.0.0",
+  "description": "E-commerce multi-item bundle builder, high-margin product cart cannibalization guardrail, cross-sell affinity matrix validator, and minimum order profitability guardian. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "organization": {
+    "name": "GenPark Inc.",
+    "url": "https://www.genpark.ai",
+    "linkedin": "https://www.linkedin.com/company/92955550"
+  },
+  "mcp_version": "2024-11-05",
+  "category": "agentic-commerce",
+  "tools": [
+    {
+      "name": "evaluate_bundle_profitability_and_cannibalization",
+      "description": "Assess proposed bundle discount to prevent cannibalizing high-margin standalone purchases while maximizing Average Order Value (AOV).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "primary_item_price_usd": {
+            "type": "number"
+          },
+          "primary_item_margin_pct": {
+            "type": "number"
+          },
+          "bundled_addon_price_usd": {
+            "type": "number"
+          },
+          "bundled_addon_margin_pct": {
+            "type": "number"
+          },
+          "proposed_bundle_discount_pct": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "primary_item_price_usd",
+          "primary_item_margin_pct",
+          "bundled_addon_price_usd",
+          "bundled_addon_margin_pct",
+          "proposed_bundle_discount_pct"
+        ]
+      }
+    },
+    {
+      "name": "synthesize_personalized_bundle_offer",
+      "description": "Generate multi-item bundle copy with tiered savings presentation and margin-protected promotional callout.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "bundle_title": {
+            "type": "string"
+          },
+          "primary_item_name": {
+            "type": "string"
+          },
+          "addon_item_name": {
+            "type": "string"
+          },
+          "approved_discount_pct": {
+            "type": "number"
+          },
+          "net_bundle_price_usd": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "bundle_title",
+          "primary_item_name",
+          "addon_item_name",
+          "approved_discount_pct",
+          "net_bundle_price_usd"
+        ]
+      }
+    }
+  ]
+}
